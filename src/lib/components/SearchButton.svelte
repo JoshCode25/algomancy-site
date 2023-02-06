@@ -1,0 +1,87 @@
+<script>
+	export let factionName;
+
+	let buttonClassOn = `button-${factionName}`;
+	let buttonClassOff = 'button-Off';
+
+	const toggleFactionFilter = () => {
+		let toggledFaction = {};
+		toggledFaction[factionName] = !factionFilter[factionName];
+		setFactionFilter((factionFilter) => ({
+			...factionFilter,
+			...toggledFaction,
+		}));
+	};
+</script>
+
+return (
+<button
+	type="button"
+	onClick={toggleFactionFilter}
+	className={`algomancy-cards-button ${
+		factionFilter[factionName] ? buttonClassOn : buttonClassOff
+	}`}>{factionName}</button
+>
+) }
+
+<style>
+	html {
+		--earth-brown: brown;
+		--wood-green: green;
+		--fire-red: red;
+		--water-blue: cornflowerblue;
+		--metal-gray: lightsteelblue;
+		--colorless-gray: gray;
+	}
+
+	div#algomancyButtonWrapper > button.algomancy-cards-button {
+		color: black;
+		background-color: whitesmoke;
+		font-size: 16px;
+		margin: 5px 5px;
+		min-width: 80px;
+		min-height: 40px;
+		border: 2px solid black;
+		border-radius: 8px;
+	}
+
+	div#algomancyButtonWrapper > button.algomancy-cards-button:hover {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+
+	div#algomancyButtonWrapper > button.button-earth {
+		color: white;
+		background-color: var(--earth-brown);
+	}
+
+	div#algomancyButtonWrapper > button.button-wood {
+		color: white;
+		background-color: var(--wood-green);
+	}
+
+	div#algomancyButtonWrapper > button.button-fire {
+		color: white;
+		background-color: var(--fire-red);
+	}
+
+	div#algomancyButtonWrapper > button.button-water {
+		color: white;
+		background-color: var(--water-blue);
+	}
+
+	div#algomancyButtonWrapper > button.button-metal {
+		color: white;
+		background-color: var(--metal-gray);
+	}
+
+	div#algomancyButtonWrapper > button.button-colorless {
+		color: white;
+		background-color: var(--colorless-gray);
+	}
+
+	.button-off {
+		color: gray;
+		background-color: whitesmoke;
+	}
+</style>
