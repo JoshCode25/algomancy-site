@@ -1,0 +1,21 @@
+html {
+	--logo-tan: rgb(203, 171, 107);
+	--logo-lightGray: rgb(232, 232, 233);
+	--logo-darkGray: rgb(85, 84, 92);
+	--logo-black: rgb(36, 30, 34);
+	--logo-brown: rgb(96, 80, 57);
+
+	--light-text-color: white;
+	--dark-text-color: black;
+
+	--earth-brown: brown;
+	--wood-green: green;
+	--fire-red: red;
+	--water-blue: cornflowerblue;
+	--metal-gray: lightsteelblue;
+	--colorless-gray: gray;
+
+	margin: 0;
+	padding: 0;
+	background-color: var(--logo-lightGray);
+}

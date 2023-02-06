@@ -24,10 +24,17 @@
 		justify-content: center;
 	}
 	nav {
+		background-color: var(--logo-black);
 		justify-content: space-between;
 	}
 	a {
+		color: var(--logo-lightGray);
+		font-size: 24px;
 		margin: 10px;
+	}
+	a:hover {
+		color: var(--logo-tan);
+		cursor: pointer;
 	}
 	img {
 		width: 100px;
@@ -35,5 +42,6 @@
 	}
 	.flexContainer {
 		display: flex;
+		align-items: center;
 	}
 </style>
