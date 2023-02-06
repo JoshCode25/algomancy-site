@@ -8,13 +8,29 @@
 	let displayCardInfo = data.cardInfo[randomName];
 </script>
 
-<h1>Algomancy Home Page!</h1>
+<h1>Algomancy</h1>
 
-<CardContainer cardInfo={displayCardInfo} />
+<div class="flexContainer">
+	<CardContainer cardInfo={displayCardInfo} />
+	<div class="summaryContainer">
+		<h2>Game Summary</h2>
+		<p>
+			This is a longer section with some descriptions about the game and what to
+			expect from it. There's likely two or three sentences here to really get
+			the point across, but not in a long wordy sort of way.
+		</p>
+	</div>
+</div>
 
-<h2>Exciting Algomancy updates:</h2>
-<ul>
-	<li>New Ruling Feature</li>
-	<li>Mechanic Clarification</li>
-	<li>Artwork revisions</li>
-</ul>
+<style>
+	.flexContainer {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.summaryContainer {
+		max-width: 300px;
+	}
+</style>
