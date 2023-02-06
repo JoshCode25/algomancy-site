@@ -3,6 +3,17 @@
 	import Header from '../lib/components/Header.svelte';
 </script>
 
-<Header />
-<slot />
-<Footer />
+<body>
+	<Header />
+	<slot />
+	<Footer />
+</body>
+
+<style>
+	body {
+		max-width: 800px;
+		text-align: center;
+		padding: 1em;
+		margin: 0 auto;
+	}
+</style>
