@@ -11,30 +11,37 @@
 <h1>Algomancy</h1>
 
 <div class="displayContainer">
-	<div class="imgWrapper">
-		<CardContainer cardInfo={displayCardInfo} />
-	</div>
-	<div class="summaryContainer">
-		<h2>Game Summary</h2>
-		<p>
-			Algomancy is a complete card game, meaning you will get every card needed
-			to play the game all at once. No expensive singles, no problems with
-			scarcity, just excellent gameplay at an affordable price.
-		</p>
-		<p>
-			The game is both a fully balanced and ready to play 8 player game as well
-			as a card pool for a variety of constructed formats. So you can use it as
-			a board game to play with your friends and a source of cards to battle it
-			out in customizable constructed decks.
-		</p>
+	<div class="queryWrapper">
+		<div class="imgWrapper">
+			<CardContainer cardInfo={displayCardInfo} />
+		</div>
+		<div class="summaryContainer">
+			<h2>Game Summary</h2>
+			<p>
+				Algomancy is a complete card game, meaning you will get every card
+				needed to play the game all at once. No expensive singles, no problems
+				with scarcity, just excellent gameplay at an affordable price.
+			</p>
+			<p>
+				The game is both a fully balanced and ready to play 8 player game as
+				well as a card pool for a variety of constructed formats. So you can use
+				it as a board game to play with your friends and a source of cards to
+				battle it out in customizable constructed decks.
+			</p>
+		</div>
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.displayContainer {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 20px;
+		container: homeDisplay / inline-size;
+	}
+	.queryWrapper {
+		@container homeDisplay (min-width: 450px) {
+			display: grid;
+			grid-template-column: 350px 1fr;
+			gap: 20px;
+		}
 	}
 	.summaryContainer {
 		max-width: 600px;

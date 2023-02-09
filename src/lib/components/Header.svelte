@@ -7,7 +7,7 @@
 </header>
 <nav>
 	<div class="flexContainer">
-		<a href="blog">BLOG</a>
+		<a href="/blog">BLOG</a>
 		<img src={logo} alt="Algomancy Logo" />
 		<a href="/cardsearch">CARD SEARCH</a>
 	</div>
