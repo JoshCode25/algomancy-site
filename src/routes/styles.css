@@ -16,7 +16,10 @@ html {
 	--faction-color-colorless: gray;
 	--faction-color-inactive: whitesmoke;
 
+	background-color: var(--logo-lightGray);
+}
+
+* {
 	margin: 0;
 	padding: 0;
-	background-color: var(--logo-lightGray);
 }

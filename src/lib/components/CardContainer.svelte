@@ -16,15 +16,14 @@
 	// const useDefaultRuling = !!cardInfo[0]?.rulings.length > 0 ? false : true;
 </script>
 
-<div>
-	<img
-		src={`https://calebgannon.com/wp-content/uploads/cardsearch-images/${cardNameDash}.jpg`}
-		alt={`${cardName}`}
-	/>
-</div>
+<img
+	src={`https://calebgannon.com/wp-content/uploads/cardsearch-images/${cardNameDash}.jpg`}
+	alt={`${cardName}`}
+/>
 
 <style>
 	img {
+		margin: 10px;
 		width: 300px;
 		height: 417px;
 		border-radius: 16px;

@@ -11,9 +11,7 @@
 
 <div class="displayContainer">
 	<div class="queryWrapper">
-		<div class="imgWrapper">
-			<CardContainer cardInfo={displayCardInfo} />
-		</div>
+		<CardContainer cardInfo={displayCardInfo} />
 		<div class="summaryContainer">
 			<h2>Game Summary</h2>
 			<p>
@@ -38,5 +36,8 @@
 	}
 	.displayContainer {
 		container: homeDisplay / inline-size;
+	}
+	.queryWrapper {
+		margin: 0 10px;
 	}
 </style>

@@ -40,6 +40,6 @@
 
 	.buttonActive {
 		color: white;
-		background-color: ;
+		/* background-color: ; */
 	}
 </style>
