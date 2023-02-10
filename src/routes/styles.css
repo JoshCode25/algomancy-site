@@ -8,12 +8,13 @@ html {
 	--light-text-color: white;
 	--dark-text-color: black;
 
-	--earth-brown: brown;
-	--wood-green: green;
-	--fire-red: red;
-	--water-blue: cornflowerblue;
-	--metal-gray: lightsteelblue;
-	--colorless-gray: gray;
+	--faction-color-earth: brown;
+	--faction-color-wood: green;
+	--faction-color-fire: red;
+	--faction-color-water: cornflowerblue;
+	--faction-color-metal: lightsteelblue;
+	--faction-color-colorless: gray;
+	--faction-color-inactive: whitesmoke;
 
 	margin: 0;
 	padding: 0;
