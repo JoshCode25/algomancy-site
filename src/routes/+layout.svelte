@@ -14,7 +14,6 @@
 	body {
 		max-width: 1000px;
 		text-align: center;
-		padding: 1em;
 		margin: 0 auto;
 	}
 </style>

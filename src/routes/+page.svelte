@@ -1,5 +1,6 @@
 <script>
 	import CardContainer from '../lib/components/CardContainer.svelte';
+	import './homestyle.css';
 
 	export let data;
 
@@ -7,8 +8,6 @@
 	let randomName = data.cardNames[Math.floor(Math.random() * cardNumber)];
 	let displayCardInfo = data.cardInfo[randomName];
 </script>
-
-<h1>Algomancy</h1>
 
 <div class="displayContainer">
 	<div class="queryWrapper">
@@ -33,17 +32,11 @@
 </div>
 
 <style lang="postcss">
+	p {
+		text-align: left;
+		margin: 10px 20px;
+	}
 	.displayContainer {
 		container: homeDisplay / inline-size;
-	}
-	.queryWrapper {
-		@container homeDisplay (min-width: 450px) {
-			display: grid;
-			grid-template-column: 350px 1fr;
-			gap: 20px;
-		}
-	}
-	.summaryContainer {
-		max-width: 600px;
 	}
 </style>

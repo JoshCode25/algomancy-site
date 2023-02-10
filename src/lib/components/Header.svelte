@@ -3,13 +3,15 @@
 </script>
 
 <header>
-	<h4>Days until Kickstarter Launch: ##</h4>
+	<h4>Kickstarter Coming In March!</h4>
 </header>
 <nav>
 	<div class="flexContainer">
-		<a href="/blog">BLOG</a>
-		<img src={logo} alt="Algomancy Logo" />
-		<a href="/cardsearch">CARD SEARCH</a>
+		<a class="blackBack" href="/blog">BLOG</a>
+		<a href="/">
+			<img src={logo} alt="Algomancy Logo" />
+		</a>
+		<a class="blackBack" href="/cardsearch">CARD SEARCH</a>
 	</div>
 </nav>
 
@@ -25,7 +27,6 @@
 		text-decoration: none;
 		color: var(--logo-lightGray);
 		font-size: 24px;
-		padding: 20px 10px;
 	}
 	a:hover {
 		color: var(--logo-tan);
@@ -36,12 +37,23 @@
 		height: 125px;
 		border-radius: 2px;
 	}
+	h4 {
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		background-color: var(--logo-tan);
+		margin: 0 10px;
+	}
 	.flexContainer {
 		margin: 0 10px;
 		width: 100%;
-		background-color: var(--logo-black);
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-around;
+	}
+	.blackBack {
+		width: 100%;
+		padding: 20px 10px;
+		background-color: var(--logo-black);
 	}
 </style>
