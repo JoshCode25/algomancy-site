@@ -2,23 +2,16 @@
 	export let factionName;
 
 	let buttonActive = true;
-	let button;
-	let activeButtonColor = `var(--faction-color-${factionName})`;
+	$: buttonClass = buttonActive ? `button-active-${factionName}` : '';
 
-	// $: if (buttonActive && button) {
-	// 	button.style.backgroundColor = `var(--faction-color-${factionName})`;
-	// }
 	const toggleFactionFilter = () => {
 		buttonActive = !buttonActive;
-		console.log(buttonActive, button);
+		console.log(buttonActive, buttonClass);
 	};
 </script>
 
-<button
-	type="button"
-	bind:this={button}
-	onClick={toggleFactionFilter}
-	class:buttonActive>{factionName}</button
+<button type="button" class={buttonClass} on:click={toggleFactionFilter}
+	>{factionName}</button
 >
 
 <style>
@@ -38,8 +31,28 @@
 		opacity: 0.8;
 	}
 
-	.buttonActive {
+	.button-active-earth {
 		color: white;
-		/* background-color: ; */
+		background-color: var(--faction-color-earth);
+	}
+	.button-active-wood {
+		color: white;
+		background-color: var(--faction-color-wood);
+	}
+	.button-active-fire {
+		color: white;
+		background-color: var(--faction-color-fire);
+	}
+	.button-active-water {
+		color: white;
+		background-color: var(--faction-color-water);
+	}
+	.button-active-metal {
+		color: white;
+		background-color: var(--faction-color-metal);
+	}
+	.button-active-colorless {
+		color: white;
+		background-color: var(--faction-color-colorless);
 	}
 </style>
