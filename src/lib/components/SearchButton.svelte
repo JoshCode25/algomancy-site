@@ -1,5 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
+	import { searchFilterStore } from '$lib/stores/searchFilterStore.js';
+
 	export let factionName;
 
 	let buttonActive = true;
@@ -19,7 +21,7 @@
 			button.style.color = 'var(--light-text-color)';
 		}
 		buttonActive = !buttonActive;
-		console.log(buttonActive, button);
+		$searchFilterStore.factionFilter[factionName] = buttonActive;
 	};
 </script>
 
@@ -35,7 +37,7 @@
 		margin: 5px 5px;
 		min-width: 80px;
 		min-height: 40px;
-		border: 2px solid black;
+		border: 2px solid var(--logo-black);
 		border-radius: 8px;
 	}
 

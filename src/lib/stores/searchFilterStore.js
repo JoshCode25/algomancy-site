@@ -9,10 +9,14 @@ const factionList = [
 	['colorless', 'c'],
 ];
 
-let defaultFactionFilter;
+let defaultFactionFilter = {};
 factionList.forEach((faction) => {
 	let factionName = faction[0];
 	defaultFactionFilter[factionName] = true;
 });
 
-const searchFilterStore = writable({});
+export const searchFilterStore = writable({
+	factionList: factionList,
+	factionFilter: defaultFactionFilter,
+	searchField: '',
+});
