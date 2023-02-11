@@ -1,22 +1,35 @@
 <script>
+	import { onMount } from 'svelte';
 	export let factionName;
 
 	let buttonActive = true;
-	$: buttonClass = buttonActive ? `button-active-${factionName}` : '';
+	let button;
+
+	onMount(() => {
+		button.style.backgroundColor = `var(--faction-color-${factionName})`;
+		button.style.color = 'var(--light-text-color)';
+	});
 
 	const toggleFactionFilter = () => {
+		if (buttonActive) {
+			button.style.backgroundColor = 'var(--faction-color-inactive)';
+			button.style.color = 'var(--faded-text-color)';
+		} else if (!buttonActive) {
+			button.style.backgroundColor = `var(--faction-color-${factionName})`;
+			button.style.color = 'var(--light-text-color)';
+		}
 		buttonActive = !buttonActive;
-		console.log(buttonActive, buttonClass);
+		console.log(buttonActive, button);
 	};
 </script>
 
-<button type="button" class={buttonClass} on:click={toggleFactionFilter}
+<button type="button" bind:this={button} on:click={toggleFactionFilter}
 	>{factionName}</button
 >
 
 <style>
 	button {
-		color: gray;
+		color: var(--light-text-color);
 		background-color: var(--faction-color-inactive);
 		font-size: 16px;
 		margin: 5px 5px;
@@ -29,30 +42,5 @@
 	button:hover {
 		cursor: pointer;
 		opacity: 0.8;
-	}
-
-	.button-active-earth {
-		color: white;
-		background-color: var(--faction-color-earth);
-	}
-	.button-active-wood {
-		color: white;
-		background-color: var(--faction-color-wood);
-	}
-	.button-active-fire {
-		color: white;
-		background-color: var(--faction-color-fire);
-	}
-	.button-active-water {
-		color: white;
-		background-color: var(--faction-color-water);
-	}
-	.button-active-metal {
-		color: white;
-		background-color: var(--faction-color-metal);
-	}
-	.button-active-colorless {
-		color: white;
-		background-color: var(--faction-color-colorless);
 	}
 </style>
