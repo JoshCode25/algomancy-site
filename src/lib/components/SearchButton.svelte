@@ -7,11 +7,13 @@
 	let buttonActive = true;
 	let button;
 
+	//set default button styling to active
 	onMount(() => {
 		button.style.backgroundColor = `var(--faction-color-${factionName})`;
 		button.style.color = 'var(--light-text-color)';
 	});
 
+	//update button styling based on active status
 	const toggleFactionFilter = () => {
 		if (buttonActive) {
 			button.style.backgroundColor = 'var(--faction-color-inactive)';
