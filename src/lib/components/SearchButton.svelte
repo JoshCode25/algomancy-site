@@ -35,16 +35,5 @@
 	button {
 		color: var(--light-text-color);
 		background-color: var(--faction-color-inactive);
-		font-size: 16px;
-		margin: 5px 5px;
-		min-width: 80px;
-		min-height: 40px;
-		border: 2px solid var(--logo-black);
-		border-radius: 8px;
-	}
-
-	button:hover {
-		cursor: pointer;
-		opacity: 0.8;
 	}
 </style>
