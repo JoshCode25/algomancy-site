@@ -18,5 +18,6 @@ factionList.forEach((faction) => {
 export const searchFilterStore = writable({
 	factionList: factionList,
 	factionFilter: defaultFactionFilter,
+	factionEquals: false,
 	searchField: '',
 });

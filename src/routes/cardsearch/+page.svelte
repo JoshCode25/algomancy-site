@@ -3,6 +3,11 @@
 	import { searchFilterStore } from '$lib/stores/searchFilterStore.js';
 
 	let totalDisplayed = 120;
+
+	function toggleFactionEquals() {
+		$searchFilterStore.factionEquals = !$searchFilterStore.factionEquals;
+		console.log($searchFilterStore);
+	}
 </script>
 
 <h1>Search all available Algomancy cards</h1>
@@ -20,10 +25,9 @@
 	</div>
 	<div class="flex-wrapper">
 		<p>{`Total Results: ${totalDisplayed}`}</p>
-		<!-- <button  
-            type="button"
-            onClick={toggleFactionEquals}
-        >Faction Filter Setting: {factionToggleButtonDisplay}</button> -->
+		<button class="factionButton" type="button" on:click={toggleFactionEquals}
+			>Faction Filter: {$searchFilterStore.factionEquals}</button
+		>
 	</div>
 </div>
 
@@ -63,24 +67,7 @@
 		}
 	}
 
-	/* div#algomancySearchWrapper > div.flex-wrapper > button#factionEqualToggleButton {
-    color: black;
-    background-color: whitesmoke;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 5px 5px;
-    padding: 0px 10px;
-    min-width: 80px;
-    min-height: 40px;
-    border: 2px solid black;
-    border-radius: 8px;
-}
-
-div#algomancySearchWrapper > div.flex-wrapper > button#factionEqualToggleButton:hover {
-    cursor: pointer;
-    opacity: 0.8;
-}
-
+	/*
 p#modifierMessage {
     margin: 0px 0px 4px 0px;
     font-size: 14px;
