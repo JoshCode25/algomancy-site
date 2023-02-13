@@ -4,9 +4,11 @@
 
 	export let data;
 
-	let cardNumber = data.cardNames.length;
-	let randomName = data.cardNames[Math.floor(Math.random() * cardNumber)];
-	let displayCardInfo = data.cardInfo[randomName];
+	let cardNumber = data.totalCardNames.length;
+	let randomName = data.totalCardNames[Math.floor(Math.random() * cardNumber)];
+	let displayCardInfo = data.totalCardInfo[randomName];
+
+	console.log(data);
 </script>
 
 <div class="displayContainer">

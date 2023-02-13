@@ -5,7 +5,7 @@ export async function load({ fetch }) {
 	const data = await response.json();
 
 	return {
-		cardInfo: data,
-		cardNames: Object.keys(data),
+		totalCardInfo: data,
+		totalCardNames: Object.keys(data),
 	};
 }

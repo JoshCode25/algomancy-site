@@ -2,12 +2,15 @@
 	import SearchButton from '$lib/components/SearchButton.svelte';
 	import { searchFilterStore } from '$lib/stores/searchFilterStore.js';
 
+	export let data;
 	let totalDisplayed = 120;
 
 	function toggleFactionEquals() {
 		$searchFilterStore.factionEquals = !$searchFilterStore.factionEquals;
 		console.log($searchFilterStore);
 	}
+
+	$: console.log(data);
 </script>
 
 <h1>Search all available Algomancy cards</h1>
@@ -18,6 +21,11 @@
 		placeholder="Search Cards (Regex or Text)"
 		bind:value={$searchFilterStore.searchField}
 	/>
+	{#if $searchFilterStore.isRegex}
+		<p class="modifierMessage">
+			Regex Search: modifiers must be in alphabetical order
+		</p>
+	{/if}
 	<div class="buttonWrapper">
 		{#each $searchFilterStore.factionList as faction}
 			<SearchButton factionName={faction[0]} />
@@ -31,11 +39,6 @@
 	</div>
 </div>
 
-<!-- <div id="algomancySearchWrapper">
-            {isRegex ? <p id="modifierMessage">Regex Search: modifiers must be in alphabetical order</p>: null}
-
-
-        </div> -->
 <style lang="postcss">
 	p {
 		margin: 10px 5px 5px 5px;
@@ -67,10 +70,9 @@
 		}
 	}
 
-	/*
-p#modifierMessage {
-    margin: 0px 0px 4px 0px;
-    font-size: 14px;
-    font-weight: bold;
-} */
+	.modifierMessage {
+		margin: 0px 0px 4px 0px;
+		font-size: 14px;
+		font-weight: bold;
+	}
 </style>
