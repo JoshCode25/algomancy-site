@@ -1,3 +1,5 @@
+export const prerender = true;
+
 export async function load({ fetch }) {
 	const response = await fetch(
 		'https://calebgannon.com/wp-content/uploads/algomancy-extras/AlgomancyCards.json'
