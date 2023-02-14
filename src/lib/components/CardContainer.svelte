@@ -1,7 +1,6 @@
 <script>
 	export let cardInfo;
 	// export let displayRulings = false;
-	$: console.log(cardInfo);
 	let cardName = cardInfo ? cardInfo[0].name : 'default';
 	const cardNameDash = cardName
 		.replace(/[.,/#!$%^&*;:{}=_`'~()]/g, '')

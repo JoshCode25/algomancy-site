@@ -1,16 +1,24 @@
 <script>
 	import SearchButton from '$lib/components/SearchButton.svelte';
 	import { searchFilterStore } from '$lib/stores/searchFilterStore.js';
+	import CardContainer from '$lib/components/CardContainer.svelte';
+	import filterDisplayedCards from './filterDisplayedCards.js';
 
 	export let data;
-	let totalDisplayed = 120;
+
+	$: displayedNames = filterDisplayedCards(
+		$searchFilterStore.searchField,
+		data.totalCardInfo,
+		data.totalCardNames,
+		$searchFilterStore.factionFilter,
+		$searchFilterStore.factionEquals
+	);
+	$: totalDisplayed = displayedNames.length;
 
 	function toggleFactionEquals() {
 		$searchFilterStore.factionEquals = !$searchFilterStore.factionEquals;
 		console.log($searchFilterStore);
 	}
-
-	$: console.log(data);
 </script>
 
 <h1>Search all available Algomancy cards</h1>
@@ -38,6 +46,9 @@
 		>
 	</div>
 </div>
+{#each displayedNames as name (name)}
+	<CardContainer cardInfo={data.totalCardInfo[name]} />
+{/each}
 
 <style lang="postcss">
 	p {

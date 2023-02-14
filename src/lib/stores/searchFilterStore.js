@@ -20,5 +20,4 @@ export const searchFilterStore = writable({
 	factionFilter: defaultFactionFilter,
 	factionEquals: false,
 	searchField: '',
-	isRegex: false,
 });
