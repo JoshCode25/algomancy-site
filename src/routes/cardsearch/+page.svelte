@@ -39,16 +39,18 @@
 			<SearchButton factionName={faction[0]} />
 		{/each}
 	</div>
-	<div class="flex-wrapper">
+	<div class="flexWrapper">
 		<p>{`Total Results: ${totalDisplayed}`}</p>
 		<button class="factionButton" type="button" on:click={toggleFactionEquals}
 			>Faction Filter: {$searchFilterStore.factionEquals}</button
 		>
 	</div>
 </div>
-{#each displayedNames as name (name)}
-	<CardContainer cardInfo={data.totalCardInfo[name]} />
-{/each}
+<div class="displayWrapper">
+	{#each displayedNames as name (name)}
+		<CardContainer cardInfo={data.totalCardInfo[name]} />
+	{/each}
+</div>
 
 <style lang="postcss">
 	p {
@@ -56,7 +58,7 @@
 		font-size: 20px;
 	}
 
-	.flex-wrapper {
+	.flexWrapper {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -65,6 +67,10 @@
 		max-width: 400px;
 	}
 
+	.displayWrapper {
+		display: flex;
+		flex-flow: row wrap;
+	}
 	input {
 		margin: 10px;
 		padding: 0 5px;
