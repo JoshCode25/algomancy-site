@@ -13,7 +13,7 @@ const config = {
 			fallback: null,
 		}),
 		paths: {
-			base: dev ? '' : '/jpi-presentation',
+			base: dev ? '' : '/algomancy-site',
 		},
 	},
 };

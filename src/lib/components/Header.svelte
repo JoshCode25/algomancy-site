@@ -1,5 +1,6 @@
 <script>
 	import logo from '$lib/assets/algomancyLogo.png';
+	import { base } from '$app/paths';
 </script>
 
 <header>
@@ -7,11 +8,11 @@
 </header>
 <nav>
 	<div class="flexContainer">
-		<a class="blackBack" href="/blog">BLOG</a>
-		<a href="/">
+		<a class="blackBack" href="{base}/blog">BLOG</a>
+		<a href="{base}/">
 			<img src={logo} alt="Algomancy Logo" />
 		</a>
-		<a class="blackBack" href="/cardsearch">CARD SEARCH</a>
+		<a class="blackBack" href="{base}/cardsearch">CARD SEARCH</a>
 	</div>
 </nav>
 
