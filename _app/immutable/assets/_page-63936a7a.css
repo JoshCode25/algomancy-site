@@ -1,0 +1,1 @@
+@container homeDisplay (min-width: 600px){.queryWrapper{display:grid;grid-template-columns:320px 1fr}}p.svelte-17jy6xd{text-align:left;margin:10px 20px}.displayContainer.svelte-17jy6xd{container:homeDisplay / inline-size}.queryWrapper.svelte-17jy6xd{margin:0 10px}

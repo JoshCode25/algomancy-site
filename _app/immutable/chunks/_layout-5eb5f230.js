@@ -1,0 +1,1 @@
+const n=!0;async function a({fetch:t}){const e=await(await t("https://calebgannon.com/wp-content/uploads/algomancy-extras/AlgomancyCards.json")).json();return{totalCardInfo:e,totalCardNames:Object.keys(e)}}const r=Object.freeze(Object.defineProperty({__proto__:null,load:a,prerender:!0},Symbol.toStringTag,{value:"Module"}));export{r as _,a as l,n as p};
