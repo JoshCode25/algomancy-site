@@ -1,4 +1,8 @@
 <script>
+	import { page } from '$app/stores';
+
+	const isclickable = $page.route.id === '/cardsearch' ? true : false;
+
 	export let cardInfo;
 	// export let displayRulings = false;
 	let cardName = cardInfo ? cardInfo[0].name : 'default';
@@ -15,12 +19,19 @@
 	const useDefaultRuling = !!cardInfo[0]?.rulings.length > 0 ? false : true;
 
 	let displayRulings = false;
+
 	function toggleRullingDisplay() {
-		displayRulings = !displayRulings;
+		if (isclickable) {
+			displayRulings = !displayRulings;
+		}
 	}
 </script>
 
-<button on:click={toggleRullingDisplay} class="cardWrapper">
+<button
+	on:click={toggleRullingDisplay}
+	class="cardWrapper"
+	class:nonClickable={!isclickable}
+>
 	{#if !displayRulings}
 		<img
 			src={`https://calebgannon.com/wp-content/uploads/cardsearch-images/${cardNameDash}.jpg`}
@@ -56,18 +67,6 @@
 		border-radius: 16px;
 	}
 
-	.rulingsDisplayWrapper {
-		width: 100%;
-		height: 100%;
-		border: 2px solid black;
-		border-radius: 16px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 10;
-		background-color: rgba(255, 255, 255, 1);
-	}
-
 	ul {
 		max-height: 300px;
 		overflow: auto;
@@ -99,6 +98,10 @@
 		width: 300px;
 		height: 417px;
 		position: relative;
+	}
+	.nonClickable:hover {
+		cursor: default;
+		opacity: 1;
 	}
 
 	.rulingsDisplayWrapper {

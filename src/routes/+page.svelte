@@ -1,5 +1,5 @@
 <script>
-	import CardContainer from '../lib/components/CardContainer.svelte';
+	import CardContainer from '$lib/components/CardContainer.svelte';
 	import './homestyle.css';
 
 	export let data;

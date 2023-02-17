@@ -70,6 +70,7 @@
 	.displayWrapper {
 		display: flex;
 		flex-flow: row wrap;
+		justify-content: center;
 	}
 	input {
 		margin: 10px;
