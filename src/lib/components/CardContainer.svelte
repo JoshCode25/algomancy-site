@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	export let cardInfo;
 
 	// export let displayRulings = false;
@@ -22,7 +23,11 @@
 	}
 </script>
 
-<button on:click={toggleRullingDisplay} class="cardWrapper">
+<button
+	on:click={toggleRullingDisplay}
+	class="cardWrapper"
+	transition:fade={{ duration: 300 }}
+>
 	{#if !displayRulings}
 		<img
 			src={`https://calebgannon.com/wp-content/uploads/cardsearch-images/${cardNameDash}.jpg`}
