@@ -1,0 +1,1 @@
+@container homeDisplay (min-width: 600px){.queryWrapper{display:grid;grid-template-columns:320px 1fr}}p.svelte-14yvsca{text-align:left;margin:10px 20px}img.svelte-14yvsca{border:none;margin:10px;padding:0;width:300px;height:417px;border-radius:16px;position:relative}.displayContainer.svelte-14yvsca{container:homeDisplay / inline-size}.queryWrapper.svelte-14yvsca{margin:0 10px}
