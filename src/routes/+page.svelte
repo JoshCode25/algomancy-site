@@ -1,19 +1,30 @@
 <script>
-	import CardContainer from '$lib/components/CardContainer.svelte';
+	import { onMount } from 'svelte';
 	import './homestyle.css';
 
 	export let data;
 
 	let cardNumber = data.totalCardNames.length;
 	let randomName = data.totalCardNames[Math.floor(Math.random() * cardNumber)];
-	let displayCardInfo = data.totalCardInfo[randomName];
+	let randomNameDash;
+	onMount(() => {
+		randomNameDash = randomName
+			.replace(/[.,/#!$%^&*;:{}=_`'~()]/g, '')
+			.split(' ')
+			.join('-');
+	});
 
 	console.log(data);
 </script>
 
 <div class="displayContainer">
 	<div class="queryWrapper">
-		<CardContainer cardInfo={displayCardInfo} />
+		{#if randomNameDash}
+			<img
+				src={`https://calebgannon.com/wp-content/uploads/cardsearch-images/${randomNameDash}.jpg`}
+				alt={`${randomName}`}
+			/>
+		{/if}
 		<div class="summaryContainer">
 			<h2>Game Summary</h2>
 			<p>
@@ -35,6 +46,16 @@
 	p {
 		text-align: left;
 		margin: 10px 20px;
+	}
+
+	img {
+		border: none;
+		margin: 10px;
+		padding: 0;
+		width: 300px;
+		height: 417px;
+		border-radius: 16px;
+		position: relative;
 	}
 	.displayContainer {
 		container: homeDisplay / inline-size;

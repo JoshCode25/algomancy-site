@@ -1,9 +1,6 @@
 <script>
-	import { page } from '$app/stores';
-
-	const isclickable = $page.route.id === '/cardsearch' ? true : false;
-
 	export let cardInfo;
+
 	// export let displayRulings = false;
 	let cardName = cardInfo ? cardInfo[0].name : 'default';
 	const cardNameDash = cardName
@@ -21,17 +18,11 @@
 	let displayRulings = false;
 
 	function toggleRullingDisplay() {
-		if (isclickable) {
-			displayRulings = !displayRulings;
-		}
+		displayRulings = !displayRulings;
 	}
 </script>
 
-<button
-	on:click={toggleRullingDisplay}
-	class="cardWrapper"
-	class:nonClickable={!isclickable}
->
+<button on:click={toggleRullingDisplay} class="cardWrapper">
 	{#if !displayRulings}
 		<img
 			src={`https://calebgannon.com/wp-content/uploads/cardsearch-images/${cardNameDash}.jpg`}
@@ -98,10 +89,6 @@
 		width: 300px;
 		height: 417px;
 		position: relative;
-	}
-	.nonClickable:hover {
-		cursor: default;
-		opacity: 1;
 	}
 
 	.rulingsDisplayWrapper {
