@@ -3,7 +3,6 @@
 	import './homestyle.css';
 
 	export let data;
-	//test if I can still push with admin permissions
 
 	let cardNumber = data.totalCardNames.length;
 	let randomName = data.totalCardNames[Math.floor(Math.random() * cardNumber)];
