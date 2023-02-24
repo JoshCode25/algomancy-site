@@ -1,24 +1,22 @@
 <script>
 	import { fly } from 'svelte/transition';
+	import { expoInOut } from 'svelte/easing';
 
 	export let text = 'this is some sample text for show.';
-	export let transitionDuration = 300;
-	export let transitionDelay = 10;
-	export let flyDistance = 100;
+	export let transitionDuration = 1000;
+	export let transitionDelay = 50;
+	export let maxFlyDistance = 100;
 
 	function returnRandomFlyDistance() {
-		let flyDistanceObject = {
-			x: 0,
-			y: 0,
-		};
-		let xOrY = Math.random() - 0.5 <= 0 ? 'x' : 'y';
-		let posOrNeg = Math.random() - 0.5 <= 0 ? 1 : -1;
+		let xSign = Math.random() - 0.5 <= 0 ? 1 : -1;
+		let xMagnitude = Math.random() * maxFlyDistance;
+		let ySign = Math.random() - 0.5 <= 0 ? 1 : -1;
+		let yMagnitude = Math.random() * maxFlyDistance;
 
-		if (xOrY === 'x') {
-			flyDistanceObject.x = flyDistance * posOrNeg;
-		} else {
-			flyDistanceObject.y = flyDistance * posOrNeg;
-		}
+		let flyDistanceObject = {
+			x: xSign * xMagnitude,
+			y: ySign * yMagnitude,
+		};
 
 		return flyDistanceObject;
 	}
@@ -33,19 +31,34 @@
 			animationDelay: index * transitionDelay,
 			x: xYDistances.x,
 			y: xYDistances.y,
+			easing: expoInOut,
 		};
 
 		return animatorObject;
 	});
 </script>
 
-{#each wordAnimators as animator}
-	<span
-		in:fly={{
-			delay: animator.animationDelay,
-			duration: transitionDuration,
-			x: animator.x,
-			y: animator.y,
-		}}>{animator.word}</span
-	>
-{/each}
+<div>
+	{#each wordAnimators as animator}
+		<span
+			in:fly={{
+				delay: animator.animationDelay,
+				duration: transitionDuration,
+				x: animator.x,
+				y: animator.y,
+			}}
+			>{`${animator.word} `}
+		</span>
+	{/each}
+</div>
+
+<style>
+	span {
+		display: block;
+		padding-right: 5px;
+	}
+	div {
+		display: flex;
+		flex-flow: row wrap;
+	}
+</style>
