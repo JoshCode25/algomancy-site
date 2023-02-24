@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { beforeUpdate } from 'svelte';
 	import './homestyle.css';
 
 	export let data;
@@ -7,14 +7,12 @@
 	let cardNumber = data.totalCardNames.length;
 	let randomName = data.totalCardNames[Math.floor(Math.random() * cardNumber)];
 	let randomNameDash;
-	onMount(() => {
+	beforeUpdate(() => {
 		randomNameDash = randomName
 			.replace(/[.,/#!$%^&*;:{}=_`'~()]/g, '')
 			.split(' ')
 			.join('-');
 	});
-
-	console.log(data);
 </script>
 
 <div class="displayContainer">
