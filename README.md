@@ -1,38 +1,33 @@
-# create-svelte
+# Algomancy
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Card Search
 
-## Creating a project
+This is a tool to search through the cards in a card game under development by Caleb Gannon.
 
-If you're seeing this, you've probably already done this step. Congrats!
+In **Algomancy**, players are in an AI world battling to be the last one standing. Updates and more information about gameplay may be found [here](https://calebgannon.com/algomancy/).
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+### Valid Search Inputs
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+This search supports both text and REGEX inputs and searches through card name, type, ability, cost, and faction information.
 
-## Developing
+Searches are _case-insensitive_.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Text searches utilize 'bag of words' style searching, meaning it searches for each individual word in an input phrase. For example: 'create tokens' would show a card containing 'create 2 tokens' and a card containing 'Destroy all tokens. Create a Fireball 1'
 
-```bash
-npm run dev
+2. Regex may be entered into the search input. Modifiers at the end must be entered alphabetically to be most effective.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Faction Filtering
 
-## Building
+There is a button displayed for each faction. The default has all factions active with Faction Filter Setting set to _Include_.
 
-To create a production version of your app:
+Clicking/tapping a button will deactivate the corresponding faction and filter it out of search results. Deactivated faction buttons will turn gray instead of the faction's representative color.
 
-```bash
-npm run build
-```
+The _Faction Filter Setting_ displays how cards are filtered based on their factions.
 
-You can preview the production build with `npm run preview`.
+1. **Includes** returns all cards that include at least one of the active factions.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+2. **Equals** returns all cards that match the active factions.
+
+## Displaying Ruling Explanations
+
+Several card interactions require special ruling clarifications. Clicking/tapping on a card's image will display whether a card has any ruling clarifications and how/where to request one if needed.

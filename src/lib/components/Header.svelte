@@ -4,7 +4,7 @@
 </script>
 
 <header>
-	<h4>Kickstarter Coming In March!</h4>
+	<h4>Kickstarter Coming Soon!</h4>
 </header>
 <nav>
 	<div class="flexContainer">
