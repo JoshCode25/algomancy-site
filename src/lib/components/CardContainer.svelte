@@ -26,7 +26,7 @@
 <button
 	on:click={toggleRullingDisplay}
 	class="cardWrapper"
-	transition:fade={{ duration: 300 }}
+	transition:fade|local={{ duration: 300 }}
 >
 	{#if !displayRulings}
 		<img
