@@ -4,7 +4,11 @@
 </script>
 
 <header>
-	<h4>Kickstarter Coming Soon!</h4>
+	<h4>
+		<a href="https://algomancy.io/" target="_blank" rel="noreferrer"
+			>Kickstarter Coming August 8th!</a
+		>
+	</h4>
 </header>
 <nav>
 	<div class="flexContainer">
@@ -44,6 +48,14 @@
 		padding: 10px;
 		background-color: var(--logo-tan);
 		margin: 0 10px;
+	}
+
+	h4 > a {
+		font-size: 16px;
+		color: var(--logo-black);
+	}
+	h4 > a:hover {
+		color: var(--logo-brown);
 	}
 	.flexContainer {
 		margin: 0 10px;
